@@ -1,0 +1,19 @@
+{
+  "name": "lewis-hamilton-experience",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack Lewis Hamilton web experience combining Active Theory WebGL & soundscapes with Lando Norris athlete branding and +44 world",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "start": "node server/dist/index.js",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

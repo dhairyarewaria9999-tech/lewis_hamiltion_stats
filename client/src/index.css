@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050507;
+    color: #F3F4F6;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070709;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232634;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #CCFF00;
+  }
+}
+
+/* Scanlines and holographic backdrop */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(18, 20, 26, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(18, 20, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(204, 255, 0, 0.25);
+  box-shadow: 0 0 30px rgba(204, 255, 0, 0.08);
+}
+
+/* Glow effects */
+.glow-yellow {
+  box-shadow: 0 0 25px rgba(204, 255, 0, 0.35);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(153, 69, 255, 0.35);
+}
+
+.glow-red {
+  box-shadow: 0 0 25px rgba(255, 24, 1, 0.35);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 15px rgba(204, 255, 0, 0.5);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 15px rgba(153, 69, 255, 0.5);
+}
+
+/* Grid overlay */
+.bg-grid-tech {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hide standard cursor when custom cursor is active on desktop */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor select {
+    cursor: none !important;
+  }
+}
